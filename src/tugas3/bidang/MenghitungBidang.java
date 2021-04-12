@@ -1,6 +1,6 @@
 package tugas3.bidang;
 
-public interface MenghitungBidang {
+interface MenghitungBidang {
     double luas();
     double keliling();
 }

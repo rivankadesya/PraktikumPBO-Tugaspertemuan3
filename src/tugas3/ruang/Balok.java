@@ -1,57 +1,33 @@
 package tugas3.ruang;
+import tugas3.bidang.PersegiPanjang;
 
-public class Balok implements MenghitungRuang{
-    private double panjang, lebar, tinggi;
+public class Balok extends PersegiPanjang implements MenghitungRuang{
+    
+    private double tinggi;
 
-    public double getP() {
-        return panjang;
+    public Balok(double tinggi, double panjang, double lebar) {
+        super(panjang, lebar);
+        this.tinggi = tinggi;
     }
 
-    public void setP(double p) {
-        this.panjang = p;
-    }
-
-    public double getL() {
-        return lebar;
-    }
-
-    public void setL(double l) {
-        this.lebar = l;
-    }
-
-    public double getT() {
+    public double getTinggi() {
         return tinggi;
     }
 
-    public void setT(double t) {
-        this.tinggi = t;
-    }
-
-    public Balok(double p, double l, double t) {
-        this.panjang = p;
-        this.lebar = l;
-        this.tinggi = t;
+    public void setTinggi(double tinggi) {
+        this.tinggi = tinggi;
     }
 
     @Override
     public double volume() {
-        System.out.println("VOLUME BALOK            : " + volume(panjang, lebar, tinggi));
-        return 0;
-    }
-    
-    public double volume(double p, double l, double t){
-        return p*l*t;
+      return luas()*tinggi;
     }
 
     @Override
     public double luasPermukaan() {
-        System.out.println("LUAS PERMUKAAN BALOK    : " + luaspermukaan(panjang, lebar, tinggi));
-        return 0;
+       return (luas()+(getPanjang()*tinggi+getLebar()*tinggi))*2;
     }
     
-    public double luaspermukaan(double p, double l, double t){
-        return 2*(p*l + p*t + l*t);
-    }
     
     
 }

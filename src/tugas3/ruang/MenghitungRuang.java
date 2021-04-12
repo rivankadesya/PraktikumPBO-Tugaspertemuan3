@@ -1,6 +1,7 @@
 package tugas3.ruang;
 
-public interface MenghitungRuang {
+interface MenghitungRuang {
     double volume();
     double luasPermukaan();
 }
+                                            
